@@ -1,4 +1,3 @@
-
 @extends('auth.layouts.app') 
 
 @section('forgot-password')
