@@ -139,9 +139,9 @@
                   </li>
                   <li class="menu-title mt-2 text-light">Apps</li>
                   <li>
-                     <a href="{{ route('quiz') }}">
-                        <i class="fas fa-medal" style="color:#fff;"></i>
-                        <span class="text-light">Quiz</span>
+                     <a href="/class">
+                        <i class="fas fa-laptop-code" style="color:#fff;"></i>
+                        <span class="text-light">Kelas</span>
                      </a>
                   </li>
                </ul>
@@ -154,6 +154,7 @@
             <div class="container-fluid">
                @yield('dashboard')
                @yield('quizz')
+               @yield('class')
             </div>
          </div>
          <footer class="footer">

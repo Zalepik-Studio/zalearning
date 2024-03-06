@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class AddClass extends Model
 {
     protected $table = 'classes';
-    protected $fillable = ['class_name', 'class_route'];
+    protected $fillable = ['class_name', 'class_thumbnail', 'class-desc', 'class_route'];
 }

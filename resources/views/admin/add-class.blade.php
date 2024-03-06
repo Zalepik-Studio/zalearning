@@ -16,6 +16,14 @@
                     <input type="text" id="class_name" name="class_name">
                 </div>
                 <div>
+                    <label for="class_desc">Deskripsi</label>
+                    <input type="text" id="class_desc" name="class_desc">
+                </div>
+                <div>
+                    <label for="class_thumbnail">Thumbnail</label>
+                    <input type="text" id="class_thumbnail" name="class_thumbnail">
+                </div>
+                <div>
                     <label for="class_route">Rute Kelas</label>
                     <input type="text" id="class_route" name="class_route">
                 </div>
