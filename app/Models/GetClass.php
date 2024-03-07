@@ -8,4 +8,9 @@ class GetClass extends Model
 {
     protected $table = 'classes';
     protected $primaryKey = 'id';
+
+    public function myClasses()
+    {
+        return $this->hasMany(MyClass::class, 'class_id', 'id');
+    }
 }

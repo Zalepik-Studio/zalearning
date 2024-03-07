@@ -139,7 +139,7 @@
                   </li>
                   <li class="menu-title mt-2 text-light">Apps</li>
                   <li>
-                     <a href="/class">
+                     <a href="/classes">
                         <i class="fas fa-laptop-code" style="color:#fff;"></i>
                         <span class="text-light">Kelas</span>
                      </a>

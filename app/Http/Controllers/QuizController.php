@@ -13,8 +13,8 @@ class QuizController extends Controller
 {
     public function quiz()
     {
-        $classId = GetClass::where('id', 1)->first()->id;
-        $userQuizId = QuizAnswers::max('user_quiz_id') + 1;
+        $classId = GetClass::where('id', (int)1)->first()->id;
+        $userQuizId = QuizAnswers::max('user_quiz_id') + (int)1;
         $questions = QuizQuestions::where('class_id', $classId)->get();
         return view('user/quiz', compact('questions', 'classId', 'userQuizId'));
     }

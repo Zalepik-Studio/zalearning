@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddClass;
 use App\Models\GetClass;
+use App\Models\RegisterClass;
 
 class ClassController extends Controller
 {
@@ -38,6 +39,28 @@ class ClassController extends Controller
     {
         $classes = GetClass::all();
 
-        return view('user/class', ['classes' => $classes]);
+        return view('user/classes', ['classes' => $classes]);
+    }
+
+    public function registerClass(Request $request)
+    {
+        $classId = $request->input('class_id');
+
+        RegisterClass::create([
+            'user_id' => auth()->user()->id,
+            'class_id' => $classId,
+        ]);
+    }
+
+
+    public function myClass()
+    {
+        $userId = auth()->user()->id;
+    
+        $classes = GetClass::whereHas('myClasses', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->get();
+    
+        return view('user/my-class', ['classes' => $classes]);
     }
 }
