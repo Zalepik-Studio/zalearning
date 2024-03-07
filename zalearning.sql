@@ -18,10 +18,11 @@ CREATE TABLE users (
 );
 
 CREATE TABLE classes (
+
     id INT PRIMARY KEY,
     class_name VARCHAR(255),
     class_thumbnail VARCHAR(255),
-    class_desc VARCHAR(255),
+    class_desc TEXT,
     class_route VARCHAR(255),
     created_at TIMESTAMP,
     updated_at TIMESTAMP

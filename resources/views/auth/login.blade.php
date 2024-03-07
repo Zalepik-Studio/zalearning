@@ -19,6 +19,12 @@
                 <div class="col-md-12 col-lg-6 col-xl-6">
                     <div class="card shadow">
                         <div class="card-body p-4">
+                            @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                             @endif
+
                             @if($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
