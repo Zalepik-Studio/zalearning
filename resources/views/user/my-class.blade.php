@@ -15,7 +15,7 @@
                 <h5 class="card-title">{{ $class->class_name }}</h5>
                 <p class="card-text">{{ $class->class_desc }}</p>
                 <p class="card-text">Harga: {{ $class->class_price }}</p>
-                <a href="{{ $class->class_route }}">Lihat Kelas</a>
+                <a href="{{ url('/class/' . $class->class_route) }}">Lihat Kelas</a>
             </div>
         </div>
     </div>

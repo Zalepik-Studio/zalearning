@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddClass;
 use App\Models\GetClass;
+use App\Models\MyClass;
 use App\Models\RegisterClass;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class ClassController extends Controller
 {
@@ -35,7 +38,7 @@ class ClassController extends Controller
         return view('admin/add-class');
     }
 
-    public function class()
+    public function classes()
     {
         $classes = GetClass::all();
 
@@ -52,6 +55,24 @@ class ClassController extends Controller
         ]);
     }
 
+    public function class($fileName)
+    {
+        $userId = Auth::id();
+    
+        $class = GetClass::where('class_route', $fileName)->first();
+    
+        $userInClass = MyClass::where('user_id', $userId)
+            ->where('class_id', $class->id)
+            ->exists();
+    
+        if ($userInClass && File::exists(resource_path("views/class/{$fileName}.blade.php"))) {
+            return view("class.{$fileName}");
+        } elseif (!$userInClass) {
+            return abort(403, 'Anda belum terdaftar dikelas ini');
+        } else {
+            return abort(404, 'Kelas tidak ditemukan');
+        }
+    }
 
     public function myClass()
     {
