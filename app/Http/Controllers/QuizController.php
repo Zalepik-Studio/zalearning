@@ -91,6 +91,6 @@ class QuizController extends Controller
             ->where('user_quiz_id', $userQuizId)
             ->first();
 
-        return view('user/quiz', compact('userScore'))->with('success', 'Quiz selesai');
+        return view('user/quiz', compact('userScore'));
     }
 }

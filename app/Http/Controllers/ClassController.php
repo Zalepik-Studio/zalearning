@@ -7,6 +7,8 @@ use App\Models\AddClass;
 use App\Models\GetClass;
 use App\Models\MyClass;
 use App\Models\RegisterClass;
+use App\Models\QuizQuestions;
+use App\Models\QuizAnswers;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 
@@ -58,15 +60,20 @@ class ClassController extends Controller
     public function class($fileName)
     {
         $userId = Auth::id();
-    
+
         $class = GetClass::where('class_route', $fileName)->first();
-    
+
         $userInClass = MyClass::where('user_id', $userId)
             ->where('class_id', $class->id)
             ->exists();
-    
+        
+        $classId = $class->id;
+
+        $userQuizId = QuizAnswers::max('user_quiz_id') + (int)1;
+        $questions = QuizQuestions::where('class_id', $classId)->get();
+
         if ($userInClass && File::exists(resource_path("views/class/{$fileName}.blade.php"))) {
-            return view("class.{$fileName}");
+            return view("class.{$fileName}", compact('questions', 'classId', 'userQuizId'));
         } elseif (!$userInClass) {
             return abort(403, 'Anda belum terdaftar dikelas ini');
         } else {
@@ -77,11 +84,11 @@ class ClassController extends Controller
     public function myClass()
     {
         $userId = auth()->user()->id;
-    
+
         $classes = GetClass::whereHas('myClasses', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->get();
-    
+
         return view('user/my-class', ['classes' => $classes]);
     }
 }
