@@ -6,6 +6,12 @@
     <a href="/my-class" class="btn btn-primary">Kelas Anda</a>
 </div>
 
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
 <div class="class-cards row">
     @foreach($classes as $class)
     <div class="class-card col-md-4">

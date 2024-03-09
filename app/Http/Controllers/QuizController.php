@@ -86,11 +86,11 @@ class QuizController extends Controller
             'score' => $score,
         ]);
 
-        $userScore = QuizScore::where('user_id', auth()->id())
+        $quizScore = QuizScore::where('user_id', auth()->id())
             ->where('class_id', $classId)
             ->where('user_quiz_id', $userQuizId)
             ->first();
 
-        return view('user/quiz', compact('userScore'));
+        return redirect('quiz')->with('success', "Kuis selesai, skor Anda: $quizScore->score");
     }
 }

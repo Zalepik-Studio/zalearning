@@ -55,6 +55,10 @@ class ClassController extends Controller
             'user_id' => auth()->user()->id,
             'class_id' => $classId,
         ]);
+
+        $class = GetClass::where('id', $classId)->first();
+
+        return redirect('my-class')->with('success', "Selamat Anda telah terdaftar di kelas $class->class_name");
     }
 
     public function class($fileName)
@@ -66,7 +70,7 @@ class ClassController extends Controller
         $userInClass = MyClass::where('user_id', $userId)
             ->where('class_id', $class->id)
             ->exists();
-        
+
         $classId = $class->id;
 
         $userQuizId = QuizAnswers::max('user_quiz_id') + (int)1;

@@ -4,21 +4,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/form-quiz.css') }}">
 </head>
-
 <body>
     <div class="content" style="overflow-y: hidden;">
-        @if(isset($userScore))
+        @if(session('success'))
         <div class="alert alert-success">
-            <strong>Quiz selesai</strong> Skor Anda: {{ $userScore->score }}
+            {{ session('success') }}
         </div>
-        @else
-
+        @endif
         <div class="wraper">
             @include('user.layouts.sidebar')
             <div style="width: 100%; max-width: 100%;  height: 78vh; overflow-y: auto; display: flex; flex-direction: column;  ">
@@ -57,9 +54,7 @@
                 </form>
             </div>
         </div>
-        @endif
     </div>
 </body>
-
 </html>
 @endsection
