@@ -50,17 +50,26 @@ class ClassController extends Controller
     public function registerClass(Request $request)
     {
         $classId = $request->input('class_id');
-
+        $userId = auth()->user()->id;
+    
+        $alreadyRegistered = RegisterClass::where('user_id', $userId)
+            ->where('class_id', $classId)
+            ->first();
+    
+        if ($alreadyRegistered) {
+            return redirect('classes')->with('status', 'Anda sudah terdaftar di kelas ini');
+        }
+    
         RegisterClass::create([
-            'user_id' => auth()->user()->id,
+            'user_id' => $userId,
             'class_id' => $classId,
         ]);
-
+    
         $class = GetClass::where('id', $classId)->first();
-
-        return redirect('my-class')->with('success', "Selamat Anda telah terdaftar di kelas $class->class_name");
-    }
-
+    
+        return redirect('my-class')->with('registrationSuccess', $class->class_name);
+    }    
+    
     public function class($fileName)
     {
         $userId = Auth::id();
