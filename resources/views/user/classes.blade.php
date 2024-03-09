@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $class->class_name }}</h5>
                     <p class="card-text">{{ $class->class_desc }}</p>
-                    <p class="card-text">Harga: Rp {{ number_format($class->class_price, 0, ',', '.') }}</p>
+                    <p class="card-text">Harga: Rp{{ number_format($class->class_price, 0, ',', '.') }}</p>
                     <button type="submit" class="btn btn-success">Daftar Kelas</button>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Selamat, Anda telah terdaftar di kelas <span id="classNamePlaceholder"></span>!</p>
+                <p>Selamat, Anda telah terdaftar di kelas <span id="classNamePlaceholder"></span></p>
             </div>
         </div>
     </div>
@@ -36,7 +36,8 @@
                 <h5 class="card-title">{{ $class->class_name }}</h5>
                 <p class="card-text">{{ $class->class_desc }}</p>
                 <p class="card-text">Harga: Rp{{ number_format($class->class_price, 0, ',', '.') }}</p>
-                <a href="{{ url('/class/' . $class->class_route) }}" class="btn btn-primary" onclick="showRegistrationSuccessModal('{{ $class->class_name }}')">Lihat Kelas <i class="fas fa-trash"></i></a>
+                <a href="{{ url('/class/' . $class->class_route) }}" class="btn btn-primary" onclick="showRegistrationSuccessModal('{{ $class->class_name }}')">Lihat Kelas</a>
+                <a href=""><i class="fas fa-trash"></i> Hapus Kelas</a>
             </div>
         </div>
     </div>

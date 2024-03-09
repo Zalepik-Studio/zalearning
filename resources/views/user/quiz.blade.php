@@ -1,21 +1,32 @@
 @extends('user.layouts.app')
 
 @section('quizz')
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/form-quiz.css') }}">
 </head>
+
 <body>
     <div class="content" style="overflow-y: hidden;">
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
+        <div class="modal fade" id="quizScoreModal" tabindex="-1" aria-labelledby="quizScoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quizScoreModalLabel">Kuis Selesai</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Jumlah soal</p>
+                        <p>Jawaban benar <span id="quiz_score"></span></p>
+                        <p>Nilai</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        @endif
         <div class="wraper">
             @include('user.layouts.sidebar')
             <div style="width: 100%; max-width: 100%;  height: 78vh; overflow-y: auto; display: flex; flex-direction: column;  ">
@@ -55,6 +66,22 @@
             </div>
         </div>
     </div>
+    <script>
+        function showQuizScoreModal(quizScore) {
+            if (quizScore !== null) {
+                document.getElementById('quiz_score').innerText = quizScore.score;
+                var modal = new bootstrap.Modal(document.getElementById('quizScoreModal'));
+                modal.show();
+            }
+        }
+
+        @if(session('quizScore'))
+        document.addEventListener('DOMContentLoaded', function() {
+            showQuizScoreModal(@json(session('quizScore')));
+        });
+        @endif
+    </script>
 </body>
+
 </html>
 @endsection
