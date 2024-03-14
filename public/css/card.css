@@ -1,0 +1,49 @@
+.card {
+   cursor: pointer;
+   height: 450px;
+   position: relative;
+}
+
+.class-thumbnail {
+   height: 200px;
+   width: auto;
+   object-fit: cover;
+}
+
+.card-title {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.class-card:hover .card {
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-des {
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.fa-star,
+.vote {
+   font-size: 12px;
+}
+
+.btn-join {
+   position: absolute;
+   bottom: 25px;
+   background-color: #437BFF;
+   color: white;
+}
+
+.btn-join:hover{
+   color: black;
+}
+

@@ -16,6 +16,7 @@
    <link href="{{ asset('../assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&family=Roboto&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+   <link rel="stylesheet" href="{{asset('css/card.css')}}">
    <title>@yield('title', 'Zalearning')</title>
 </head>
 

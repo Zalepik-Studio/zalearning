@@ -29,7 +29,7 @@ input[type="radio"]:checked+.radio-label {
    color: #fff;
 }
 
-#quizForm{
+#quizForm {
    margin-top: 1rem;
 }
 
@@ -42,15 +42,11 @@ input[type="radio"]:checked+.radio-label {
 @media only screen and (max-width: 767px) {
    .radio-label {
       width: 20px;
-      /* Adjust the width for mobile */
       height: 20px;
-      /* Adjust the height for mobile */
       font-size: 14px;
-      /* Adjust the font size for mobile */
    }
 
    .question {
       font-size: 16px;
-      /* Adjust the font size for mobile */
    }
 }
