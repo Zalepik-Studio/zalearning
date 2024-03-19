@@ -86,10 +86,12 @@ class QuizController extends Controller
             'score' => $score,
         ]);
 
-        $quizScore = QuizScore::where('user_id', auth()->id())
+        $correctAnswer = QuizScore::where('user_id', auth()->id())
             ->where('class_id', $classId)
             ->where('user_quiz_id', $userQuizId)
             ->first();
+
+        
 
         return redirect('quiz')->with('quizScore', $quizScore);
     }
