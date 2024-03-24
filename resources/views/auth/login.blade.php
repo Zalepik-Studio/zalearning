@@ -39,8 +39,8 @@
                                     <span class="logo-lg">
                                         <img src="{{ asset('assets/images/zalepik.png') }}" alt="" width="50">
                                     </span>
-                                    <span class="logo-zalepik">Zalepik</span>
-                                    <span class="logo-studio">Studio</span>
+                                    <span style="color: #000; font-family: Poppins; font-size: 25px; font-weight: 600; line-height: normal; text-transform: uppercase; margin-left: 7vh; margin-top: -5vh; display: block;">Zalepik</span>
+                                    <span style="display: block; margin-left: 7vh; color: #616161; font-family: Poppins; font-size: 12px; font-style: normal; font-weight: 600; line-height: normal;">Studio</span>
                                 </div>
                             </div>
                             <h4 class="welcome-login">Hai, Selamat Datang!</h4>
@@ -49,7 +49,7 @@
                                 @csrf
                                 <div class="social-auth-links text-center mt-2 mb-2">
                                     <a href="#" type="text" class="form-control hover">
-                                        <img src="{{ asset('assets/icons/google.png') }}" alt="" width="25" heigt="25" class=""><span class="google">Login dengan Google</span>
+                                        <img src="{{ asset('assets/icons/google.png') }}" alt="" width="25" height="25"><span style="font-family: 'Poppins'; font-weight: 500; font-size: 15px; line-height: 30px; color: #000000; padding: 10px;">Login dengan Google</span>
                                     </a>
                                 </div>
                                 <div class="garis">
@@ -76,7 +76,7 @@
                                     <a href="{{ route('forgot-password') }}" class="float-end">Forgot Password?</a>
                                 </div>
                                 <div class="text-center d-grid mt-5">
-                                    <button class="btn btn-lg tombol-login text-white" type="submit">Login</button>
+                                    <button class="btn btn-lg text-white" type="submit" style="border-radius: 10px; background: #437BFF; color: #FFF; font-family: Poppins; font-size: 20px; font-weight: 500; line-height: normal;">Login</button>
                                 </div>
                             </form>
                         </div> 

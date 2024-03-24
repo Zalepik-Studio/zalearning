@@ -91,8 +91,8 @@ class QuizController extends Controller
             ->where('user_quiz_id', $userQuizId)
             ->first();
 
-        
-
         return redirect('quiz')->with('quizScore', $quizScore);
     }
 }
+
+

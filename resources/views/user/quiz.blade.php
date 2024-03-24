@@ -1,16 +1,14 @@
 @extends('user.layouts.app')
 
-@section('quizz')
+@section('quiz')
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/form-quiz.css') }}">
 </head>
-
 <body>
     <div class="content" style="overflow-y: hidden;">
         @if(isset($userScore))
@@ -19,24 +17,10 @@
         </div>
         @else
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="wraper">
             @include('user.layouts.sidebar')
             <div style="width: 100%; max-width: 100%;  height: 78vh; overflow-y: auto; display: flex; flex-direction: column;  ">
-                <form method="post" action="{{ route('submit-quiz') }}" id="quizForm">
+                <form method="post" action="{{ route('submit-quiz') }}" id="quiz_form">
                     @csrf
                     <input type="hidden" name="class_id" value="{{ $classId }}">
                     <input type="hidden" name="user_quiz_id" value="{{ $userQuizId }}">
@@ -74,6 +58,5 @@
         @endif
     </div>
 </body>
-
 </html>
 @endsection

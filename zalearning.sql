@@ -5,7 +5,7 @@ USE zalearning;
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255),
-    gender VARCHAR(255),
+    gender ENUM('Male', 'Female'),
     date_of_birth DATE,
     email VARCHAR(255) UNIQUE,
     phone_number VARCHAR(255),
@@ -22,6 +22,7 @@ CREATE TABLE classes (
     class_name VARCHAR(255),
     class_thumbnail VARCHAR(255),
     class_desc TEXT,
+    class_price VARCHAR(2550),
     class_route VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

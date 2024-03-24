@@ -1,52 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,400;1,100&family=Roboto&display=swap');
 
-.logo-zalepik{
-  color: #000;
-  font-family: Poppins;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: normal;
-  text-transform: uppercase;
-  margin-left: 7vh;
-  margin-top:-5vh;
-  display: block;
-}
-
-.logo-studio{
-  display: block;
-  margin-left: 7vh;
-  color: #616161;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal; 
-}
-
-.google{
-  font-family: 'Poppins';
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 30px;
-  color: #000000;
-  padding: 10px;
-}
-
 .hover:hover {
   background-color: skyblue;
 }
 
-
-.tombol-login{
-  border-radius: 10px; background: #437BFF;
-  color: #FFF;
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.welcome-login{
+.welcome-login {
   color: #000;
   font-family: Poppins;
   font-size: 20px;
@@ -54,14 +12,14 @@
   line-height: normal; 
 }
 
-.title{
+.title {
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 30px;
   line-height: 52px;
 }
 
-.title1{
+.title1 {
   font-family: 'Poppins';
   font-weight: 400;
   font-size: 23px;
@@ -69,14 +27,14 @@
   color: #FFFFFF;
 }
 
-.judul{
+.judul {
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 35px;
   line-height: 60px;
 }
 
-.intro{
+.intro {
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 25px;
@@ -84,7 +42,7 @@
   color: #437BFF;
 }
 
-.ui{
+.ui {
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 15px;
@@ -93,7 +51,7 @@
   margin-top: -30px;
 }
 
-.figma_tools{
+.figma_tools {
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 30px;
@@ -101,7 +59,7 @@
   color: #000;
 }
 
-.judul_course{
+.judul_course {
   font-family: 'Poppins';
   font-weight: 400;
   font-size: 25px;
@@ -109,7 +67,7 @@
   color: #437BFF;
 }
 
-.course_right{
+.course_right {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -117,11 +75,11 @@
   line-height: 45px;
 }
 
-.course_right a{ 
+.course_right a { 
   color: #000;
 }
 
-.reward{
+.reward {
   color: #000;
   font-family: Poppins;
   font-size: 30px;
@@ -129,7 +87,7 @@
   line-height: normal;
 }
 
-.title-reward{
+.title-reward {
   color: #616161;
   font-family: Poppins;
   font-size: 15px;

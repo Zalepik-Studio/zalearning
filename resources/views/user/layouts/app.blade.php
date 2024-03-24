@@ -154,7 +154,7 @@
          <div class="content">
             <div class="container-fluid">
                @yield('dashboard')
-               @yield('quizz')
+               @yield('quiz')
                @yield('class')
             </div>
          </div>

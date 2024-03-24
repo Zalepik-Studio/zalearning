@@ -18,6 +18,7 @@ class CreateClassesTable extends Migration
             $table->string('class_name');
             $table->string('class_thumbnail');
             $table->text('class_desc');
+            $table->text('class_price');
             $table->string('class_route');
             $table->timestamps();
         });

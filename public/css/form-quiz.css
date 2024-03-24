@@ -29,7 +29,7 @@ input[type="radio"]:checked+.radio-label {
    color: #fff;
 }
 
-#quizForm {
+#quiz_form {
    margin-top: 1rem;
 }
 
