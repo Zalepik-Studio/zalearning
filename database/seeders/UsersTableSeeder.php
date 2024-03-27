@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Admin',
-            'gender' => null,
-            'date_of_birth' => '0000-00-00',
+            'gender' => 'Male',
+            'date_of_birth' => '1990-01-01',
             'email' => 'admin@zalepik.com',
             'phone_number' => '085720075826',
             'password' => Hash::make('123456'),

@@ -14,6 +14,7 @@
     <link href="{{ asset('../assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('css/form-addclass.css')}}"/>
     <title>@yield('title', 'Zalearning')</title>
 </head>
 <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
@@ -137,13 +138,13 @@
                         <li class="menu-title mt-2 text-light">Apps</li>
                         <li>
                             <a href="add-class">
-                                <i class="fas fa-plus" style="color:#fff;"></i>
+                                <i class="far fa-plus-square" style="color:#fff;"></i>
                                 <span class="text-light">Add Class</span>
                             </a>
                         </li>
                         <li>
                             <a href="add-quiz">
-                                <i class="fas fa-plus" style="color:#fff;"></i>
+                                <i class="fas fa-edit" style="color:#fff;"></i>
                                 <span class="text-light">Add Quiz</span>
                             </a>
                         </li>
