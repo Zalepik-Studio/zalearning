@@ -152,9 +152,7 @@
       <div class="content-page">
          <div class="content">
             <div class="container-fluid">
-               @yield('dashboard')
-               @yield('quiz')
-               @yield('class')
+               @yield('kuis-dasar-pemrograman-javascript')
             </div>
          </div>
          <footer class="footer">

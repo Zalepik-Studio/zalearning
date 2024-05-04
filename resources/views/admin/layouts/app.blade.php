@@ -130,7 +130,7 @@
                     <ul id="side-menu">
                         <li class="menu-title text-light">Navigation</li>
                         <li>
-                            <a href="{{ route('dashboard') }}">
+                            <a href="/admin/dashboard">
                                 <i class="fe-pie-chart" style="color:#fff;"></i>
                                 <span class="text-light"> Dashboards </span>
                             </a>

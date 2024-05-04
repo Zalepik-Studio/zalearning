@@ -1,6 +1,6 @@
-@extends('user.layouts.app')
+@extends('class_route.layouts.app')
 
-@section('quizz')
+@section('kuis-dasar-pemrograman-javascript')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +11,15 @@
 </head>
 <body>
     <div class="content" style="overflow-y: hidden;">
-        @if(session('success'))
+        @if(isset($userScore))
         <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
+            <strong>Quiz selesai</strong> Skor Anda: {{ $userScore->score }}
+        @else
+
         <div class="wraper">
-            @include('user.layouts.sidebar')
+            @include('class_route.layouts.dasar-pemrograman-javascript')
             <div style="width: 100%; max-width: 100%;  height: 78vh; overflow-y: auto; display: flex; flex-direction: column;  ">
-                <form method="post" action="{{ route('submit-quiz') }}" id="quizForm">
+                <form method="post" action="{{ route('submit-quiz') }}" id="quiz_form">
                     @csrf
                     <input type="hidden" name="class_id" value="{{ $classId }}">
                     <input type="hidden" name="user_quiz_id" value="{{ $userQuizId }}">
@@ -54,6 +54,7 @@
                 </form>
             </div>
         </div>
+        @endif
     </div>
 </body>
 </html>

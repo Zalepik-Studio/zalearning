@@ -22,7 +22,14 @@ CREATE TABLE classes (
     class_name VARCHAR(255),
     class_thumbnail VARCHAR(255),
     class_desc TEXT,
-    class_price VARCHAR(2550),
+    class_price VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE class_routes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    class_id INT(11),
     class_route VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

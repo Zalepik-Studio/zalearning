@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\AddClass;
 use App\Models\GetClass;
 use App\Models\MyClass;
+use App\Models\ClassRoute;
 use App\Models\RegisterClass;
 use App\Models\QuizQuestions;
 use App\Models\QuizAnswers;
@@ -69,24 +70,28 @@ class ClassController extends Controller
     
         return redirect('my-class')->with('registrationSuccess', $class->class_name);
     }    
-    
+
     public function class($fileName)
     {
         $userId = Auth::id();
-
-        $class = GetClass::where('class_route', $fileName)->first();
-
+    
+        $classRoute = ClassRoute::where('class_route', $fileName)->first();
+    
+        if (!$classRoute) {
+            return abort(404, 'Kelas tidak ditemukan');
+        }
+    
+        $classId = $classRoute->class_id;
+    
         $userInClass = MyClass::where('user_id', $userId)
-            ->where('class_id', $class->id)
+            ->where('class_id', $classId)
             ->exists();
-
-        $classId = $class->id;
-
+    
         $userQuizId = QuizAnswers::max('user_quiz_id') + (int)1;
         $questions = QuizQuestions::where('class_id', $classId)->get();
-
-        if ($userInClass && File::exists(resource_path("views/class/{$fileName}.blade.php"))) {
-            return view("class.{$fileName}", compact('questions', 'classId', 'userQuizId'));
+    
+        if ($userInClass && File::exists(resource_path("views/class_route/{$fileName}.blade.php"))) {
+            return view("class_route.{$fileName}", compact('questions', 'classId', 'userQuizId'));
         } elseif (!$userInClass) {
             return abort(403, 'Anda belum terdaftar dikelas ini');
         } else {
@@ -97,11 +102,17 @@ class ClassController extends Controller
     public function myClass()
     {
         $userId = auth()->user()->id;
-
+    
         $classes = GetClass::whereHas('myClasses', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->get();
-
-        return view('user/my-class', ['classes' => $classes]);
+    
+        $classRoutes = [];
+        foreach ($classes as $class) {
+            $classRoute = ClassRoute::where('class_id', $class->id)->value('class_route');
+            $classRoutes[$class->id] = $classRoute;
+        }
+    
+        return view('user.my-class', compact('classes', 'classRoutes'));
     }
 }
