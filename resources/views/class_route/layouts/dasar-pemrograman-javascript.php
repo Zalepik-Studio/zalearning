@@ -36,7 +36,7 @@
                      </a>
                      <ul class="sub-nav collapse list-unstyled" id="subMateri3">
                         <li class="nav-item">
-                           <a class="nav-link" href="#">
+                           <a class="nav-link" href="/class/pengenalan-dan-sejarah-javascript">
                               <i class="fas fa-check-circle text-success me-2"></i>Pengenalan dan Sejarah JavaScript (Gratis)
                            </a>
                         </li>
