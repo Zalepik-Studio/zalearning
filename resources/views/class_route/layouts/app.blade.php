@@ -153,6 +153,7 @@
          <div class="content">
             <div class="container-fluid">
                @yield('kuis-dasar-pemrograman-javascript')
+               @yield('pengenalan-dan-sejarah-javascript')
             </div>
          </div>
          <footer class="footer">

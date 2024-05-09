@@ -24,7 +24,7 @@
             @csrf
             <input type="hidden" name="class_id" value="{{ $class->id }}">
             <div class="card">
-                <img src="{{ asset('assets/images/thumbnail-1.png') }}" alt="" class="card-img-top class-thumbnail">
+                <img src="{{ $class->class_thumbnail }}" alt="" class="card-img-top class-thumbnail">
                 <div class="card-body" style="position: relative;">
                     <h5 class="card-title">{{ $class->class_name }}</h5>
                     <p class="card-desc" style="height: 60px; overflow: hidden;"> {{ $class->class_desc }}</p>
