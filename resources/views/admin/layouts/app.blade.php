@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
     <link href="{{ asset('../assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{asset('css/form-addclass.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/form-addclass.css')}}" />
     <title>@yield('title', 'Zalearning')</title>
 </head>
+
 <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
     <div id="wrapper">
         <div class="navbar-custom" style="background-color:#FFF;">
@@ -137,6 +139,12 @@
                         </li>
                         <li class="menu-title mt-2 text-light">Apps</li>
                         <li>
+                            <a href="users">
+                                <i class="fas fa-users" style="color: #fff;"></i>
+                                <span class="text-light">Users</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="add-class">
                                 <i class="far fa-plus-square" style="color:#fff;"></i>
                                 <span class="text-light">Add Class</span>
@@ -157,10 +165,11 @@
             <div class="content">
                 <div class="container-fluid">
                     @yield('dashboard')
+                    @yield('users')
                     @yield('add-class')
                     @yield('add-quiz')
-                </div> 
-            </div> 
+                </div>
+            </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -175,7 +184,7 @@
             </footer>
         </div>
     </div>
- 
+
     <div class="rightbar-overlay"></div>
 
     <script src="{{ asset('../assets/js/vendor.min.js') }}"></script>
@@ -187,4 +196,5 @@
     <script src="{{ asset('../assets/libs/bootstrap-table/bootstrap-table.min.js') }}"></script>
     <script src="{{ asset('../assets/js/pages/bootstrap-tables.init.js') }}"></script>
 </body>
+
 </html>

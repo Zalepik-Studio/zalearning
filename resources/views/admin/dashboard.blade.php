@@ -4,4 +4,10 @@
 
 @section('dashboard')
 
+Total Users
+{{ $totalUsers }}
+
+Total Kelas
+{{ $classTotals }}
+
 @endsection

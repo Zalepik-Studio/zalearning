@@ -27,7 +27,7 @@
     @foreach($classes as $class)
     <div class="class-card col-md-4">
         <div class="card">
-            <img src="{{ asset('assets/images/thumbnail-1.png') }}" alt="" class="card-img-top class-thumbnail">
+            <img src="{{ $class->class_thumbnail }}" alt="" class="card-img-top class-thumbnail">
             <div class="card-body" style="display: grid; grid-template-rows: 1fr auto; position:relative;">
                 <div class="">
                     <h5 class="card-title">{{ $class->class_name }}</h5>

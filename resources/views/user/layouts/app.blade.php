@@ -139,6 +139,12 @@
                   </li>
                   <li class="menu-title mt-2 text-light">Apps</li>
                   <li>
+                     <a href="/users">
+                        <i class="fas fa-users" style="color:#fff;"></i>
+                        <span class="text-light">Users</span>
+                     </a>
+                  </li>
+                  <li>
                      <a href="/classes">
                         <i class="fas fa-laptop-code" style="color:#fff;"></i>
                         <span class="text-light">Kelas</span>
@@ -153,6 +159,7 @@
          <div class="content">
             <div class="container-fluid">
                @yield('dashboard')
+               @yield('users')
                @yield('quiz')
                @yield('class')
             </div>

@@ -26,5 +26,10 @@ class User extends Model implements Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function classes()
+    {
+        return $this->belongsToMany(UserClasses::class, 'user_classes', 'user_id', 'class_id');
+    }    
 }
 

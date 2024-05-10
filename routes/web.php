@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ClassController;
@@ -25,6 +26,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->middleware('role:admin');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('role:user');
+
+    Route::get('/admin/users', [UserController::class, 'users'])->middleware('role:admin');
+    Route::get('/users', [UserController::class, 'users'])->middleware('role:user');
 
     Route::get('/admin/add-class', [ClassController::class, 'addClass'])->middleware('role:admin');
     Route::post('/admin/add-class', [ClassController::class, 'addClass'])->name('add-class');
