@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Management</title>
+  <title>Users</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
@@ -30,7 +30,7 @@
 <body>
   <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2>User </h2>
+      <h2>Users</h2>
       <div>
         <button class="btn btn-primary"><i class="fas fa-file-excel"></i> Export to Excel</button>
         <button class="btn btn-success"><i class="fas fa-user-plus"></i> Add New User</button>
@@ -40,8 +40,8 @@
       <thead class="thead-light">
         <tr>
           <th>#</th>
-          <th>Name</th>
-          <th>Date Created</th>
+          <th>Nama</th>
+          <th>Created At</th>
           <th>Role</th>
           <th>Status</th>
           <th>Action</th>
@@ -86,12 +86,8 @@
       </tbody>
     </table>
   </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-  
 @endsection

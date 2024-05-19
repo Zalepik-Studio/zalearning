@@ -43,9 +43,15 @@ class ClassController extends Controller
 
     public function classes()
     {
+        $user = auth()->user();
+
         $classes = GetClass::all();
 
-        return view('user/classes', ['classes' => $classes]);
+        if ($user->role == 'admin') {
+            return view('admin/classes', ['classes' => $classes]);
+        } elseif ($user->role == 'user') {
+            return view('user/classes', ['classes' => $classes]);
+        }
     }
 
     public function registerClass(Request $request)

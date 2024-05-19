@@ -97,7 +97,7 @@
           <div class="small-box bg-info">
             <div class="inner">
               <h3>{{ $totalUsers }}</h3>
-              <p>User</p>
+              <p>Users</p>
             </div>
             <div class="icon">
               <i class="fas fa-users"></i>
@@ -108,7 +108,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>{{ $classTotals }}</h3>
+              <h3>0</h3>
               <p>Kelas</p>
             </div>
             <div class="icon">
@@ -120,7 +120,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3>2</h3>
+              <h3>0</h3>
               <p>Serifikat</p>
             </div>
             <div class="icon">
@@ -132,7 +132,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3>4</h3>
+              <h3>0</h3>
               <p>Selesai</p>
             </div>
             <div class="icon">

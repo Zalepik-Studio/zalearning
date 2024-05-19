@@ -2,7 +2,7 @@
 
 @section('add-class')
 
-<div class="card">
+<div class="card mt-2">
   <div class="card-header">
     <h3 class="card-title">Tambah Kelas</h3>
   </div>

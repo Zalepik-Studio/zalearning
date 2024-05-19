@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('class')
+@section('classes')
 
 <div class="w-full d-flex justify-content-end text-center align-items-center h-full  py-2 ">
    <p class="m-0 me-2">Tampilkan: </p>
@@ -16,7 +16,6 @@
       </ul>
    </div>
 </div>
-
 <div class="class-cards row">
     @foreach($classes as $class)
     <div class="class-card col-md-4">

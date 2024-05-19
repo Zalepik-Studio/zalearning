@@ -39,7 +39,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/quiz', [QuizController::class, 'quiz'])->name('quiz')->middleware('role:user');
     Route::post('/submit-quiz', [QuizController::class, 'submitQuiz'])->name('submit-quiz');
 
-    Route::get('/classes', [ClassController::class, 'classes'])->middleware('role:user,admin');
+    Route::get('/admin/classes', [ClassController::class, 'classes'])->middleware('role:admin');
+    Route::get('/classes', [ClassController::class, 'classes'])->middleware('role:user');
 
     Route::post('/register-class', [ClassController::class, 'registerClass'])->name('register-class');
 

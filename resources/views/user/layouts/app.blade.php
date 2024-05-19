@@ -161,7 +161,7 @@
                @yield('dashboard')
                @yield('users')
                @yield('quiz')
-               @yield('class')
+               @yield('classes')
             </div>
          </div>
          <footer class="footer">

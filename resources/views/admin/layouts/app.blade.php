@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="{{asset('css/form-addclass.css')}}" />
     <title>@yield('title', 'Zalearning')</title>
 </head>
-
 <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
     <div id="wrapper">
         <div class="navbar-custom" style="background-color:#FFF;">
@@ -139,21 +137,15 @@
                         </li>
                         <li class="menu-title mt-2 text-light">Apps</li>
                         <li>
-                            <a href="users">
+                            <a href="/admin/users">
                                 <i class="fas fa-users" style="color: #fff;"></i>
                                 <span class="text-light">Users</span>
                             </a>
                         </li>
                         <li>
-                            <a href="add-class">
-                                <i class="far fa-plus-square" style="color:#fff;"></i>
-                                <span class="text-light">Add Class</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="add-quiz">
-                                <i class="fas fa-edit" style="color:#fff;"></i>
-                                <span class="text-light">Add Quiz</span>
+                            <a href="/admin/classes">
+                                <i class="fas fa-laptop-code" style="color:#fff;"></i>
+                                <span class="text-light">Kelas</span>
                             </a>
                         </li>
                     </ul>
@@ -166,6 +158,7 @@
                 <div class="container-fluid">
                     @yield('dashboard')
                     @yield('users')
+                    @yield('classes')
                     @yield('add-class')
                     @yield('add-quiz')
                 </div>
